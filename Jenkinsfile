@@ -4,6 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+		echo 'Cloning the repositories'
+		sh 'git clone https://github.com/hkusdaryanto/nextjs-sample-app.git'
                 echo 'Installing Dependencies'
                 sh 'npm install'
 		echo 'Building NextJS App'
