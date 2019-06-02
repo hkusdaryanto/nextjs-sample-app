@@ -4,14 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-		echo 'Cloning the repositories'
-		sh 'git clone https://github.com/hkusdaryanto/nextjs-sample-app.git'
                 echo 'Installing Dependencies'
                 sh 'npm install'
 		echo 'Building NextJS App'
-		sh './node_modules/next/bin/next build'
+		sh 'node_modules/next/dist/bin/next build'
 		echo 'Running App with Production ENV'
-		sh './node_modules/next/bin/next start'
+		sh 'node_modules/next/dist/bin/next start'
             }
         }
         stage('Test') {
