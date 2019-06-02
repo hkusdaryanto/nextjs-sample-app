@@ -8,8 +8,6 @@ pipeline {
                 sh 'npm install'
 		echo 'Building NextJS App'
 		sh 'node_modules/next/dist/bin/next build'
-		echo 'Running App with Production ENV'
-		sh 'node_modules/next/dist/bin/next start'
             }
         }
         stage('Test') {
